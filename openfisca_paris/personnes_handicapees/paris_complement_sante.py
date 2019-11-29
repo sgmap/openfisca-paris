@@ -27,7 +27,9 @@ class paris_complement_sante_ph_eligibilite(Variable):
 		param_aah = parameters(period).prestations.minima_sociaux
 		plafond_2 = param_aah.aah.montant + param_aah.caah.majoration_vie_autonome
 
-		return personnes_handicapees * (base_ressources <= max_(plafond_1, plafond_2)) 
+		css = famille('cmu_acs_eligibilite', period)
+
+		return personnes_handicapees * (base_ressources <= max_(plafond_1, plafond_2)) * not_(css)
 
 
 class paris_complement_sante_ph_montant(Variable):

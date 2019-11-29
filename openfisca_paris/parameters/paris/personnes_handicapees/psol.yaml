@@ -10,6 +10,8 @@ plafond:
         value: 915.0
       2019-01-01:
         value: 965.0
+      2019-11-01:
+        value: 1005.0
   couple:
     unit: currency
     values:
