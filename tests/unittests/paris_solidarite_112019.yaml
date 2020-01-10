@@ -1,0 +1,53 @@
+- name: Personne seule perçoit 5000 € de ressources
+  period: 2019-11
+  input:
+    paris_personne_handicapee: true
+    paris_base_ressources_couple: 5000
+  output:
+    paris_solidarite_ph_montant: 0
+
+- name: Personne seule perçoit 500 €
+  period: 2019-11
+  absolute_error_margin: 0.005
+  input:
+    paris_personne_handicapee: true
+    en_couple: false
+    paris_base_ressources_couple: 500
+  output:
+    paris_solidarite_ph_base_ressources: 900 
+    paris_solidarite_ph_montant: 105 
+
+- name: Couple perçoit 6000 €
+  period: 2019-11
+  input:
+    paris_personne_handicapee: true
+    en_couple: true
+    paris_base_ressources_couple: 6000
+  output:
+    paris_solidarite_ph_base_ressources: 6000
+    paris_solidarite_ph_montant: 0
+
+- name: Personne éligible à PSOL PH pour un montant de 105 euros
+  period: 2019-11
+  input:
+    paris_solidarite_ph_eligibilite: true
+  output:
+    paris_solidarite_ph_montant: 105
+
+- name: Personne seule perçoit 5000 €
+  period: 2019-11
+  input:
+    paris_personne_agee: true
+    paris_base_ressources_couple: 5000
+  output:
+    paris_solidarite_pa_montant: 0
+
+- name: Couple agées perçoit 1000 €
+  period: 2019-11
+  absolute_error_margin: 0.005
+  input:
+    paris_personne_agee: true
+    en_couple: true
+    paris_base_ressources_couple: 1347.88
+  output:
+    paris_solidarite_pa_montant: 205.12

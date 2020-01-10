@@ -1,0 +1,61 @@
+- name: Eligibilité d'une personne handicapée seule au Complément Santé Paris
+  period: 2019-11
+  input:
+    paris_personne_handicapee: true
+    paris_base_ressources_couple: 
+      2019-10: 965
+  output:
+    paris_complement_sante_ph: 0
+
+- name: Eligibilité d'une personne handicapée en couple au Complément Santé Paris
+  period: 2019-11
+  input:
+    paris_personne_handicapee: true
+    en_couple: true
+    paris_base_ressources_couple: 
+      2019-10: 1533
+  output:
+     paris_complement_sante_ph: 0
+
+- name: Montant du Complément Santé Paris pour une personne éligible, en fonction du cumul ou non avec l'ACS et/ou la CMU-C
+  period: 2019-11
+  input:
+    paris_complement_sante_ph_eligibilite: true
+    cmu_c: false
+    acs: 0
+  output:
+    paris_complement_sante_ph: 0
+
+- name: Complément Santé Paris pour une personne handicapée
+  period: 2019-11
+  input:
+    paris_complement_sante_ph_eligibilite: true
+    paris_complement_sante_ph_montant: 0
+  output:
+    paris_complement_sante_ph: 0
+
+- name: Eligibilité d'une personne âgée seule au Complément Santé Paris
+  period: 2019-11
+  input:
+    paris_personne_agee: true
+    paris_base_ressources_couple: 
+      2019-10: 981
+  output:
+    paris_complement_sante_pa_eligibilite: false
+
+- name: Montant du Complément Santé Paris pour une personne éligible, en fonction du cumul ou non avec l'ACS et/ou la CMU-C
+  period: 2019-11
+  input:
+    paris_complement_sante_pa_eligibilite: true
+    cmu_c: false
+    acs: 23
+  output:
+    paris_complement_sante_pa_montant: 0
+
+- name: Complément Santé Paris pour une personne âgée
+  period: 2019-11
+  input:
+    paris_complement_sante_pa_eligibilite: true
+    paris_complement_sante_pa_montant: 0
+  output:
+    paris_complement_sante_pa: 0
